@@ -1,0 +1,9 @@
+<launch>
+
+<machine name = "vero-OEM" address = "vero-OEM" env-loader = "/opt/ros/fuerte/env.sh" user = "vero" password = "clara97" />
+
+<node machine = "vero-OEM" pkg = "hokuyo_node" type = "hokuyo_node" name = "hokuyo_inferior" >
+	<param name = "port" value = "/dev/hokuyo_00807286" />
+</node>
+
+</launch>

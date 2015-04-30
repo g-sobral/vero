@@ -1,0 +1,5 @@
+<launch>
+ 	<include file="$(find joy2vero)/launch/subsonic.launch" />
+ 	<include file="$(find joy2vero)/launch/joy.launch" />
+</launch>
+

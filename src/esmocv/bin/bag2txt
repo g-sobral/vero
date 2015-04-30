@@ -1,0 +1,9 @@
+
+
+
+xterm -e "rostopic echo -p /dvs_status > $1_dvs_status.txt" &
+
+xterm -e "rostopic echo -p /track_status > $1_track_status.txt" &
+
+rosbag play $1.bag 
+

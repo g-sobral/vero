@@ -1,0 +1,4 @@
+<launch>
+  <machine name="embsys0" address="192.168.1.10" env-loader="/opt/ros/fuerte/env.sh" user="vero" password="CLARA97"/>
+  <machine name="intensepc" address="192.168.1.11" env-loader="/opt/ros/indigo/env.sh" user="drvc-iglu"/>
+</launch>

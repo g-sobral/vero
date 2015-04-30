@@ -1,0 +1,5 @@
+Data:28/04/2014
+Autor:Lucas Casanova Nogueira
+Descrição: cv.h not found. Provalmente resolvido com instalação do opencv.
+status: RESOLVIDO
+Solução: Instalação dos pacotes opencv na máquina. Modificacao do CMakeLists para incluir e linkar as bibliotecas do OpenCV.

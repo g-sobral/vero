@@ -1,0 +1,56 @@
+depois de instalar tudo e compilar em uma maquina nova, listei aqui todos os
+problemas. 
+ah, nao esqueca de rodar o muon como root, ou nao da pra pesquisar pacotes
+por partes do nome. (%> sudo muon)
+
+********** SE NAO QUISER COMPILAR ALGUMA COISA ******
+Poderiamos ter varios repositorios para o laboratorio, mas o problema eh
+gerenciar dependencias entre eles na hora de compilar, ja que eles deveriam 
+ser compilados separadamente. Ou seja, se deveria compilar manualmente
+na ordem certa, o que pode ser complicado se houver ciclos de dependencias
+
+Entao, se ha um grande repositorio e nao deseja instalar todos os pacotes, 
+para nao ter que instalar alguma dependencia, basta criar um arquivo
+vazio chamado CATKIN_IGNORE, no diretorio do package que vc nao quer
+compilar. 
+
+NAO INCLUA ESTES ARQUIVOS CATKIN_IGNORE NO REPOSITORIO. Cada um decida o que
+nao quer compilar na sua copia local.
+
+********** POINT GREY LIBRARY
+ptgrey precisa das libs e headers da flea
+download o pacote para linux, ele vai listar uma serie de pacotes ubuntu para
+instalar e depois o instalador instala varios pacotes.
+
+********** MRPT
+nao esta mais no repo do ROS, pq ja esta tudo no repositorio normal do
+ubuntu. portanto basta instalar o normal do ubuntu
+na verdade existe um pacote -dev, um metapacote que instala todos os pacotes
+de libs MRPT.
+(eh usado pelo driver do pantilt)
+
+********** ESMlib.a 
+a lib do Ezio. 
+precisa do do .h e do .a, mas:
+- o ESMlibry.h ja esta junto com o codigo 
+- o .a precisa ir para /usr/lib com o nome libESMlib.a
+ou seja precisa ter lib no comeco, o cmake nao adivinha nomes fora do padrao
+- este arquivo precisa de permissao de leitura para todos: 
+       sudo chmod 777 /usr/lib/libESMlib.a 
+
+******************************* 
+
+********** KDL (erro de Rotation no pacote PTU)
+parece que a distribuicao do KDL no ROS esta quebrada e ele nao acha a lib
+consegue achar o .h mas nao consegue linkar.
+fato: a classe Rotation esta na lib orocos_kdl.so
+entao eu inseri a lib manualmente no CMakeLists.txt do pacote PTU do pantilt
+se o erro voltar, provalemnete eh o caminho que esta errado no
+CMakeLists.txt
+tente tambem colocar o pacote orocos_kdl como dependencia, talvez tenham
+consertado e achem sozinho
+
+**************** XSENS LIBs
+por default nao compila o Xsens. apague o CATKIN_IGNORE pra compilar
+Ele precisa das libs do xsens instalado, e nem todo mundo precisa funcionar
+o xsens.

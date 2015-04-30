@@ -1,0 +1,11 @@
+<launch>
+  
+  <include file="$(find ptgrey_simple)/launch/ptgrey_nodelet.launch"/>
+  
+  <remap from = "image" to = "/ptgrey_simple/pgr_mono" />
+  <node pkg="nodelet" type="nodelet" name="imageview" args="load image_view/image standalone_nodelet"  output="screen">
+    <param name="autosize" value="false" />
+  </node>
+  
+  
+</launch>

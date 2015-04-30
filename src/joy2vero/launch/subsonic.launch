@@ -1,0 +1,17 @@
+<launch>
+
+ <!-- Joy2Vero Node-->
+  <node pkg="joy2vero" type="joy2vero_node" name="joy2vero">
+	<rosparam file = "$(find joy2vero)/launch/joy2vero_params.yaml" />
+	<remap from="car_command" to="verocarfreedom/car_command"/>
+  </node>
+
+  <!-- Axes -->
+  <param name="axis_linear" value="3" type="int"/>
+  <param name="axis_angular" value="0" type="int"/>
+  <param name="scale_linear" value="0.2" type="double"/>
+  <param name="scale_angular" value="-0.25" type="double"/>
+
+
+</launch>
+

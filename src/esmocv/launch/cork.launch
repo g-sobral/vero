@@ -1,0 +1,61 @@
+<launch>
+  <node pkg="nodelet" type="nodeletesm" name="esmnodelet"
+args="manager" output="screen"/>
+
+  
+  <node pkg="nodelet" type="nodeletesm" name="cv_camera" args="load
+cv_camera/CvCameraNodelet esmnodelet" output="screen">
+    <param name="file" value="/home/vero/Downloads/seq/cork9.avi" />     
+    <param name="rate" value="1" />
+  </node>
+  
+ <param name="/image_topic_name" type="string" value="/cv_camera/image_raw" />  
+  <remap from = "/ptgrey_simple/pgr_mono" to = "/moviereader/image_raw" />
+  <node pkg="nodelet" type="nodeletesm" name="esmocv" args="load
+esmocv/esmocv esmnodelet" output="screen">
+    <!--testado fast ddvs (120Hz): lambda=0.8 squareside=250 -->
+    <param name="track/maxIte" value="5" />
+    <param name="track/mprec" value="2" />
+    <!-- if max_RMS is zero, RMS error will not be calculated or checked (saves time) -->
+    <param name="track/max_RMS" value="0" />
+    <!-- if correlation_window is zero no correlation is used -->
+    <param name="track/correlation_window" value="64" />
+    <param name="roi/width" value="200" />
+    <param name="roi/height" value="200" />
+    <!-- if roi/x and roi/y are not set, the rectangle will be centered -->
+    <param name="roi/x" value="260" />
+    <param name="roi/y" value="250" />
+    <param name="stepmask/step" value="0" />
+    <param name="viewscale" value="0.5" />
+    <param name="ploteveryframe" value="1" />
+    <param name="focal_length_pix" value="790" />
+  </node>
+  
+  <!--
+  <node pkg="nodelet" type="nodeletesm" name="dvsnodelet" args="load
+          dvs/ddvs esmnodelet" output="screen">
+    <param name="lambda" value="0.41" />
+    <param name="ppv" value="0" />
+    <param name="robot" value="pioneer" />
+    <param name="staubli/host" value="200.144.114.161" />
+    <param name="staubli/port" value="11111" />
+    <param name="staubli/theta_deg" value ="0" />
+  </node> 
+  -->
+  
+  <!--
+  <remap from = "image" to = "/moviereader/image_raw" />
+  <node pkg="nodelet" type="nodeletesm" name="imageview" args="load image_view/image esmnodelet"  output="screen">
+    <param name="autosize" value="false" />
+  </node>
+  -->
+  
+  <!--
+  teste mostrando melhoras com a correlacao
+  cork2 (2 em 2 imagens)
+  ROI x160,y150,250x250
+  corr 32 o tracking eh visualmente ok
+  sem corr, no final ha dois momentos em que o quadrado "entorta"
+  -->
+
+</launch>

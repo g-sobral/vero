@@ -1,0 +1,18 @@
+<launch>
+
+<!-- estes dois primeiros nodes tem que ser inicializados na maquina conectada fisicamente com a camera -->
+<node machine = "EMBSYS0" pkg = "camera1394" type = "camera1394_node" name = "camera1394_node" >
+	<param name = "GUID" value = "08004602000305ef" />
+	<param name = "camera_info_url" value = "file:///home/vero/.ros/camera_info/08004602000305ef.yaml" />
+	<param name = "frame_id" value = "camera" />
+	<param name = "video_mode" value = "640x480_yuv411" />
+</node>
+
+<node machine = "EMBSYS0" ns = "camera" pkg = "image_proc" type = "image_proc" name = "image_proc" />
+
+<node machine = "verot" pkg = "image_view" type = "image_view" name = "image_view" >
+	<param name = "image_transport" value = "compressed" />
+        <remap from = "image" to = "/camera/image_rect_color" />
+</node>
+
+</launch>

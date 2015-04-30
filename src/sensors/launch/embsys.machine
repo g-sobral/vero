@@ -1,0 +1,13 @@
+<!-- define-se todas as máquinas: EMBSYS0 e vero-OEM são embarcados e hp10628 é um computador offboard para visualização de dados -->
+
+<launch>
+
+	<machine name = "vero-OEM" address = "vero-OEM" env-loader = "/opt/ros/fuerte/env.sh" user = "vero" password = "clara97" />
+
+	<machine name = "EMBSYS0" address = "EMBSYS0" env-loader = "/opt/ros/fuerte/env.sh" user = "vero" password = "CLARA97" />
+
+	<machine name = "hp10628" address = "hp10628" env-loader = "/opt/ros/fuerte/env.sh" user = "hazevedo" password = "dinamite" />
+  
+	<machine name = "verot" address = "verot" env-loader = "/opt/ros/groovy/env.sh" user = "vero" password = "clara97" />
+
+</launch>

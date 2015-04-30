@@ -1,0 +1,62 @@
+/**
+\mainpage
+\htmlinclude manifest.html
+
+\b injectable_ros is ... 
+
+why have I created a version of the nodelet package ? 
+Moreover, the only difference is on the nodelet executable, which is called nodeletesm
+from the beggining:
+
+The object was to use ESMLib from Ezio Malis on a nodelet.
+we obviously need a C++ adapter to simplify the interface
+and the nodelet really needs to be a shared lib. 
+Plan A
+ create a C++ shared lib which uses ESMlib.
+Plan B
+ create a nodelet (another shared lib) which uses I-a) and performs the DVS+tracking
+
+Problem: ESMlib is static, it is NOT PIC compiled (Position independent code)
+so a) and b), both can not work
+
+Plan C
+  integrate ESMlib in the executable, which on this case is the nodelet manager
+  therefore we need a custom version of the nodelet package, to be overloaded over the default one
+  
+  I tried just to add ESMlib.a into target_link(), just to link another library
+  but the linker is smart and it does not include symbols on the executable if these symbols are not used whithin the codeapi
+  I tried with -Wl,-whole-archive ESMLib.a -Wl,-no-whole-archive, but I got a error, some basic gcc symbols were being redefined
+  I do not know why.
+  
+Plan D:
+  integrate the ESMLib plus the C++ adapter lib into the executable
+  this means just to add the code from the C++ adapterlib into the executable code
+  the adapter lib will call all the necessary symbols from ESM, so the linking is straightforwward with no special options
+  This is the way it works
+  
+  It sucks. When we have ESMlib with code, with a shared lib, or at least with a PIC-enabled static lib, then we can fix this
+  
+<!-- 
+In addition to providing an overview of your package,
+this is the section where the specification and design/architecture 
+should be detailed. While the original specification may be done on the
+wiki, it should be transferred here once your package starts to take shape.
+You can then link to this documentation page from the Wiki. 
+-->
+
+
+\section codeapi Code API
+
+<!--
+Provide links to specific auto-generated API documentation within your
+package that is of particular interest to a reader. Doxygen will
+document pretty much every part of your code, so do your best here to
+point the reader to the actual API.
+
+If your codebase is fairly large or has different sets of APIs, you
+should use the doxygen 'group' tag to keep these APIs together. For
+example, the roscpp documentation has 'libros' group.
+-->
+
+
+*/

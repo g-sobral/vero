@@ -1,0 +1,55 @@
+<package>
+  <name>nodelet</name>
+  <version>1.8.1</version>
+  <description>
+    OVERLAYn of the nodelet package to include the ESM library.
+    
+    The nodelet package is designed to provide a way to run multiple
+    algorithms in the same process with zero copy transport between
+    algorithms.
+
+    This package provides both the nodelet base class needed for
+    implementing a nodelet, as well as the NodeletLoader class used
+    for instantiating nodelets.
+  </description>
+  <maintainer email="tfoote@osrfoundation.org">Tully Foote</maintainer>
+  <license>BSD</license>
+
+  <url>http://ros.org/wiki/nodelet</url>
+  <author>Tully Foote</author>
+  <author>Radu Bogdan Rusu</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>bondcpp</build_depend>
+  <build_depend>boost</build_depend>
+  <build_depend>message_generation</build_depend>
+  <build_depend>pluginlib</build_depend>
+  <build_depend>rosconsole</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>tinyxml</build_depend>
+  <build_depend>uuid</build_depend>
+  <build_depend>sockutil</build_depend>
+  <build_depend>image_transport</build_depend>
+  <!--build_depend>nodelet</build_depend--> 
+
+  <!--run_depend>nodelet</run_depend--> 
+  <run_depend>bondcpp</run_depend>
+  <run_depend>boost</run_depend>
+  <run_depend>message_runtime</run_depend>
+  <run_depend>pluginlib</run_depend>
+  <run_depend>rosconsole</run_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>sensor_msgs</run_depend>
+  <run_depend>geometry_msgs</run_depend>
+  <run_depend>tinyxml</run_depend>
+  <run_depend>uuid</run_depend>
+  <run_depend>sockutil</run_depend>
+  <run_depend>image_transport</run_depend>
+
+</package>

@@ -1,0 +1,109 @@
+<launch>
+	<arg name="enableMapToOdom" default="true"/> 
+	<arg name="enableOdomToVehicle" default="true"/> 
+	<node pkg="super_tf" name="super_tf_node" type="super_tf_node" output="screen">
+			<!--- UTM to Map -->
+				<param name="UTMTransformName" value="UTM"/>
+
+			<!--- Map to Odom -->
+				<param name="enableMapToOdom" value="true"/>				
+				<param name="MapTransformName" value="map"/>
+				<param name="odomMapCorrection_topic" value="roda_odom"/>
+
+			<!--- Odom to Vehicle -->
+				<param name="OdomTransformName" value="odom"/>
+				<param name="odom_topic" value="roda_odom"/>
+				<param name="enableOdomToVehicle" value="true" />
+
+			<!--- Vehicle to Base/ Projection of base_link on the floor / height of CM -->
+				<param name="HeightBaseLink" value="-0.5" />
+
+			<!--- Vehicle to Front Wheel Axis	-->
+				<param name="FrontWheelTransformName" value="front_wheel"/>
+				<param name="cardata_topic" value="/verocarfreedom/car_data"/>
+
+			<!--- Vehicle to Fixed Sensors -->
+					<param name="VehicleTransformName" value="base_link"/>
+					<!--- Laser Hokuyo -->
+						<param name="HokuyoTransformName" value="laser"/>
+						<param name="HokuyoPose_x" value="1.805"/>
+						<param name="HokuyoPose_y" value="0.0"/>
+						<param name="HokuyoPose_z" value="0.18"/>
+						<param name="HokuyoOrientation_x" value="0.0"/>
+						<param name="HokuyoOrientation_y" value="0.0"/>
+						<param name="HokuyoOrientation_z" value="0.0"/>
+						<param name="HokuyoOrientation_w" value="1.0"/>
+
+					<!--- Laser Sick1 -->
+						<param name="Sick1TransformName" value="sick1_laser"/>
+						<param name="Sick1Pose_x" value="1.755"/>
+						<param name="Sick1Pose_y" value="0.0"/>
+						<param name="Sick1Pose_z" value="0.477"/>
+						<param name="Sick1Orientation_x" value="0.0"/>
+						<param name="Sick1Orientation_y" value="0.0"/>
+						<param name="Sick1Orientation_z" value="0.0"/>
+						<param name="Sick1Orientation_w" value="1.0"/>
+
+					<!--- Laser Sick2 -->
+						<param name="Sick2TransformName" value="sick2_laser"/>
+						<param name="Sick2Pose_x" value="1.585"/>
+						<param name="Sick2Pose_y" value="0.0"/>
+						<param name="Sick2Pose_z" value="1.284"/>
+						<param name="Sick2Orientation_x" value="0.0"/>
+						<param name="Sick2Orientation_y" value="0.0"/>
+						<param name="Sick2Orientation_z" value="0.0"/>
+						<param name="Sick2Orientation_w" value="1.0"/>
+
+					<!--- Camera Videre -->
+						<param name="VidereTransformName" value="camera_videre"/>
+						<param name="ViderePose_x" value="1.585"/>
+						<param name="ViderePose_y" value="0.0"/>
+						<param name="ViderePose_z" value="0.982"/> <!--- + raio da camera -->
+						<param name="VidereOrientation_x" value="0.0"/>
+						<param name="VidereOrientation_y" value="0.0"/>
+						<param name="VidereOrientation_z" value="0.0"/>
+						<param name="VidereOrientation_w" value="1.0"/>
+
+					<!--- Antena GPS -->
+						<param name="AntenaGpsTransformName" value="antena_gps"/>
+						<param name="AntenaGpsPose_x" value="0.14"/>
+						<param name="AntenaGpsPose_y" value="0.0"/>
+						<param name="AntenaGpsPose_z" value="1.24"/>
+						<param name="AntenaGpsOrientation_x" value="0.0"/>
+						<param name="AntenaGpsOrientation_y" value="0.0"/>
+						<param name="AntenaGpsOrientation_z" value="0.0"/>
+						<param name="AntenaGpsOrientation_w" value="1.0"/>
+
+					<!--- IMU VG400, ainda precisa ser medido! -->
+						<param name="IMUTransformName" value="imu_vg400"/>
+						<param name="IMUPose_x" value="1.585"/>
+						<param name="IMUPose_y" value="0.0"/>
+						<param name="IMUPose_z" value="1.284"/>
+						<param name="IMUOrientation_x" value="0.0"/>
+						<param name="IMUOrientation_y" value="0.0"/>
+						<param name="IMUOrientation_z" value="0.0"/>
+						<param name="IMUOrientation_w" value="1.0"/>
+
+					<!--- Xsens Unidade Inercial, ainda precisa ser medido! -->
+						<param name="xsensTransformName" value="xsens"/>
+						<param name="xsensPose_x" value="1.585"/>
+						<param name="xsensPose_y" value="0.0"/>
+						<param name="xsensPose_z" value="1.284"/>
+						<param name="xsensOrientation_x" value="0.0"/>
+						<param name="xsensOrientation_y" value="0.0"/>
+						<param name="xsensOrientation_z" value="0.0"/>
+						<param name="xsensOrientation_w" value="1.0"/>
+					
+					<!--- Xsens Antena GPS, ainda precisa ser medido! -->
+						<param name="xsensAntenaGpsTransformName" value="xsens_gps"/>
+						<param name="xsensGpsAntenaPose_x" value="1.585"/>
+						<param name="xsensGpsAntenaPose_y" value="0.0"/>
+						<param name="xsensGpsAntenaPose_z" value="1.284"/>
+						<param name="xsensGpsAntenaOrientation_x" value="0.0"/>
+						<param name="xsensGpsAntenaOrientation_y" value="0.0"/>
+						<param name="xsensGpsAntenaOrientation_z" value="0.0"/>
+						<param name="xsensGpsAntenaOrientation_w" value="1.0"/>
+	</node>
+
+</launch>
+

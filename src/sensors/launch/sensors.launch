@@ -1,0 +1,26 @@
+<!-- aplicação básica: inicializa todos os sensores do VERO -->
+
+<launch>
+	
+	<include file = "$(find sensors)/launch/embsys.machine" />
+	
+	<include file = "$(find verocarfreedom)/launch/odom_roda_node.launch"/>
+	
+	<!-- include file = "$(find applanix)/launch/applanix_node.launch"/ -->
+	
+	<!-- include file = "$(find new_nmea_gps_driver)/launch/gps_node.launch"/ -->
+	
+	<include file = "$(find insgpsxbow)/launch/insgpsxbow.launch"/>
+	
+	<remap from = "scan" to = "scan_hokuyo_superior" />
+	<include file = "$(find sensors)/launch/hokuyo_superior.launch"/>
+	
+	<remap from = "scan" to = "scan_hokuyo_inferior" />
+	<include file = "$(find sensors)/launch/hokuyo_inferior.launch"/>
+	
+	<remap from = "scan" to = "scan_sick" />
+	<include file = "$(find sensors)/launch/sick_laser.launch"/>
+	
+	<include file = "$(find sensors)/launch/camera1394.launch"/>
+
+</launch>

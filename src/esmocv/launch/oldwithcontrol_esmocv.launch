@@ -1,0 +1,38 @@
+<launch>
+  <node pkg="nodelet" type="nodeletesm" name="esmnodelet"
+args="manager" output="screen"/>
+
+  <node pkg="nodelet" type="nodeletesm" name="ptgrey_simple" args="load
+ptgrey_simple/ptgrey_simple esmnodelet" output="screen">
+  </node>
+
+  <node pkg="nodelet" type="nodeletesm" name="esmocv" args="load
+esmocv/esmocv esmnodelet" output="screen">
+    <!--testado fast ddvs (120Hz): lambda=0.8 squareside=250 -->
+    <param name="track/maxIte" value="5" />
+    <param name="track/mprec" value="2" />
+    <!-- if correlation_window is zero no correlation is used -->
+    <param name="track/correlation_window" value="32" />
+    <param name="roi/width" value="500" />     
+    <param name="roi/height" value="500" />
+    <!-- if roi/x and roi/y are zero, the rectangle will be centered -->
+    <!--param name="roi/x" value="600" /-->
+    <!--param name="roi/y" value="300" /-->
+    <param name="viewscale" value="0.5" />
+    <param name="ctrl/algorithm" value="ddvs" />
+    <param name="ctrl/ddvs/ppv" value="1" />
+    <param name="ctrl/lambda" value="0.5" />
+    <param name="robot" value="staubli" />
+    <param name="staubli/host" value="200.144.114.161" />
+    <param name="staubli/port" value="11111" />
+    <param name="staubli/theta_deg" value ="0" />
+  </node>
+  
+  <!--
+  <remap from = "image" to = "/ptgrey_simple/pgr_mono" />
+  <node pkg="nodelet" type="nodeletesm" name="imageview" args="load image_view/image esmnodelet"  output="screen">
+    <param name="autosize" value="false" />
+  </node>
+  -->
+  
+</launch>

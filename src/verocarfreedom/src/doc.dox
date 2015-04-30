@@ -1,0 +1,12 @@
+/*!
+@ingroup hydro_drivers_carfreedom
+@ingroup hydro_cpp
+@ingroup hydro_linux
+@defgroup hydro_driver_carfreedom CarFreedom 
+@brief The driver for the Freedom Car. It deals with the CAN Bus to read data from the car and sends commands.
+
+@Dependencies
+\li HydroSocketCAN ( basic can device driver )
+\li HydroCarFreedomDefs (the format of can frames is defined in this lib)
+
+*/

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package>
+  <name>watchdog</name>
+  <version>0.0.0</version>
+  <description>The watchdog package</description>
+
+  <maintainer email="gasan.sobral@gmail.com">Gabriel Sobral</maintainer>
+
+  <license>BSD</license>
+
+  <author email="todo@todo.todo">Adalberto Alencar Albuquerque</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <run_depend>roscpp</run_depend>
+
+  <!-- The export tag contains other, unspecified, tags -->
+  <export>
+    <cpp cflags="-I${prefix}/include" lflags="-Wl,-rpath,${prefix}/lib -L${prefix}/lib -lwatchdog"/>
+  </export>
+</package>

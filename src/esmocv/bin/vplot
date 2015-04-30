@@ -1,0 +1,5 @@
+#remember to source devel setup to find the message definition
+#source devel/setup.bash
+rqt_plot /esmnodelet/dvs_status/fps_cur &
+rqt_plot /esmnodelet/dvs_status/v_r\[3\] /esmnodelet/dvs_status/v_r\[4\] /esmnodelet/dvs_status/v_r\[5\] &
+rqt_plot /esmnodelet/dvs_status/v_r\[0\] /esmnodelet/dvs_status/v_r\[1\] /esmnodelet/dvs_status/v_r\[2\] &

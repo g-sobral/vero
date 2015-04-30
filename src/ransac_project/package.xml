@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<package>
+  <name>ransac_project</name>
+  <version>0.0.0</version>
+  <description>The ransac_project package</description>
+
+  <maintainer email="gasan.sobral@gmail.com">Gabriel Sobral</maintainer>
+
+  <license>BSD</license>
+
+  <!-- <author email="jane.doe@example.com">Jane Doe</author> -->
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>message_generation</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>nav_msgs</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>tf</build_depend>
+  <build_depend>mrpt_libs</build_depend>
+  <build_depend>watchdog</build_depend>
+  <run_depend>message_runtime</run_depend>
+  <run_depend>geometry_msgs</run_depend>
+  <run_depend>nav_msgs</run_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>sensor_msgs</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>tf</run_depend>
+  <run_depend>mrpt_libs</run_depend>
+  <run_depend>watchdog</run_depend>
+
+
+  <!-- The export tag contains other, unspecified, tags -->
+  <export>
+<!--
+   <cpp cflags="-I${prefix}/include" lflags="-Wl,-rpath,${prefix}/lib -L${prefix}/lib -lransac_project"/>
+   -->
+  </export>
+</package>

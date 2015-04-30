@@ -1,0 +1,13 @@
+<!-- envia e recebe dados do barramento CAN -->
+
+<launch>
+		<node pkg = "verocarfreedom" name = "odom_roda_node" type = "odom_roda_node" respawn="true">
+			<param name="publish_tf" value="true"/>
+			<param name="invert_tf" value="true"/>
+			<param name="frame_id" value="odom" />
+			<param name="child_frame_id" value="base_link" />
+			<param name="k1" value="0.05" />
+			<param name="k2" value="0.05" />
+			<rosparam file = "$(find verocarfreedom)/launch/odom_roda_node_params.yaml" />
+	 	</node>
+</launch>

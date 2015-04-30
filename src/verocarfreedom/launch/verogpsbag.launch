@@ -1,0 +1,13 @@
+<launch>
+  <node pkg="rosbag" type="record" name="record" output="screen"
+  args=" 
+/verocarfreedom/applanix/gps_fix
+/verocarfreedom/xsens/gps/data
+/verocarfreedom/xsens/gps/extra
+/verocarfreedom/applanix/gps_odom
+/verocarfreedom/roda_odom
+
+
+  "/>
+
+</launch>

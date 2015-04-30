@@ -1,0 +1,5 @@
+<launch>
+	<node pkg="rviz" type="rviz" name="rviz" 
+    	args="-d /home/amazonas/vero0demo.rviz/"/>
+
+</launch>

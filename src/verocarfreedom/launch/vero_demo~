@@ -1,0 +1,5 @@
+<launch>
+	<include file="$(find verocarfreedom)/launch/vero0.launch"/>
+
+
+</launch>

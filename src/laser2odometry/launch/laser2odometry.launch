@@ -1,0 +1,9 @@
+<launch>
+  <include file="$(find ransac_project)/launch/pioneer.launch"/>
+  
+  <remap from = "roda_odom" to = "pose" />
+  <remap from = "laser_data" to = "scan" />
+  <node name="laser2odometry" pkg="laser2odometry" type="laser2odometry"/>
+  <!-- (Debug) launch-prefix="xterm -e gdb (traço traço)args" --> 
+  
+</launch>

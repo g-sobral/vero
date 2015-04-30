@@ -1,0 +1,4 @@
+<launch>
+	<include file="$(find verocarfreedom)/launch/vero0.launch"/>
+	<include file="$(find joy2vero)/launch/joy2vero.launch"/>
+</launch>

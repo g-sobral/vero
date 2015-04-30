@@ -1,0 +1,7 @@
+<library path="lib/libesmocv">
+  <class name="esmocv/esmocv" type="esmocv::ESMOCVNodelet" base_class_type="nodelet::Nodelet">
+    <description> 
+      ESM implemented as OCV
+    </description>
+  </class>
+</library>

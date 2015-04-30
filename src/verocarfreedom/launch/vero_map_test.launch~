@@ -1,0 +1,22 @@
+<launch>
+	<arg name="enableMapToOdom" default="true"/> 	
+	<arg name="enableOdomToVehicle" default="true"/>
+	<group ns="verocarfreedom">	
+		<include file="$(find verocarfreedom)/launch/odom_roda_node.launch"/>		
+		<include file="$(find hokuyo)/launch/hokuyo_vero.launch"/>
+		<include file="$(find receive_xsens)/launch/all_zero.launch"/>
+		<include file="$(find pointgrey_camera_driver)/launch/camera.launch"/>
+		<include file="$(find super_tf)/launch/super_tf_launch.launch" />
+		<include file="$(find applanix_bridge)/launch/example.launch"/>
+	</group>       
+
+	
+
+	<!--include file="$(find pointgrey)/launch/camera.launch"/-->
+	<!--include file="$(find super_tf)/launch/super_tf_launch.launch"/-->
+	<!--include file="$(find new_nmea_gps_driver)/launch/gps_node.launch"/-->
+	<!--include file="$(find insgpsxbow)/launch/insgpsxbow.launch"/-->
+	<!--include file="/home/vero/koy/sick_laser.launch"/-->
+	<!--include file="/home/vero/koy/camera_teste.launch"/-->
+</launch>
+

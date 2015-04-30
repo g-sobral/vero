@@ -1,0 +1,7 @@
+<launch>
+
+	<node machine = "vero-OEM" pkg = "sicktoolbox_wrapper" type = "sicklms" name = "sick_laser" >
+		<param name = "port" value = "/dev/ttyS0" />
+	</node> 
+
+</launch>

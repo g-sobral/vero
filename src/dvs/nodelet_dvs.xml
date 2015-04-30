@@ -1,0 +1,12 @@
+<library path="lib/libdvs">
+  <class name="dvs/dvs" type="dvs::DVSNodelet" base_class_type="nodelet::Nodelet">
+    <description> 
+      DVS implemented with OpenCV
+    </description>
+  </class>
+  <class name="dvs/ddvs" type="dvs::DDVSNodelet" base_class_type="nodelet::Nodelet">
+    <description> 
+      DDVS (Decoupled version) implemented with OpenCV
+    </description>
+  </class>
+</library>

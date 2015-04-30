@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package>
+  <name>sensors</name>
+  <version>0.0.0</version>
+  <description>The sensors package</description>
+
+  <author>hazevedo</author>
+	<maintainer email="vero@todo.todo">vero</maintainer>
+
+  <license>BSD</license>
+
+	<url>http://ros.org/wiki/sensors</url>
+  
+	<buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <run_depend>roscpp</run_depend>
+	<run_depend>geometry_msgs</run_depend>
+  <run_depend>sensor_msgs</run_depend>
+
+</package>
+
+

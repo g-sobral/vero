@@ -1,0 +1,21 @@
+<launch>
+
+	<node pkg = "ransac_project" type = "ransac" name = "ransac" output="screen">
+		<param name = "threshold" value = "0.05" />
+		<param name = "dataWidth" value = "4.0" />
+		<param name = "winWidth" value = "1.0" />
+		<param name = "winLength" value = "2.0" />
+		<param name = "verbose" value = "false" />
+	</node>
+
+	<node pkg = "ransac_project" type = "ransac_control" name = "ransac_control" output="screen">
+		<param name = "which_car" value = 'pioneer' />
+		<param name = "v_linear" value = "0.3" />
+		<param name = "lenght" value = "1.5" />
+		<param name = "KPT" value = "10" />
+		<param name = "KIT" value = "0.1" />
+		<param name = "KRT" value = "1" />
+		<param name = "KVT" value = "0.1" />
+	</node>
+
+</launch>

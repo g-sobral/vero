@@ -1,0 +1,11 @@
+<!-- aplicação: controle por joystick ou teclado, é necessário antes inicializar os sensores -->
+
+<launch>
+
+	<group ns="verocarfreedom">
+		<node pkg="verocarfreedom_controle" name = "verocarfreedom_controle_node" type = "verocarfreedom_controle_node" args = "-j j" >
+			<rosparam file = "$(find verocarfreedom_controle)/launch/verocarfreedom_controle_params.yaml" />
+		</node>
+	</group>
+
+</launch>

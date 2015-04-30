@@ -1,0 +1,10 @@
+<launch>
+	<include file="$(find verocarfreedom)/launch/vero.machine" />
+	<include file="$(find verocarfreedom)/launch/hector.launch"/>	
+	<include file="$(find verocarfreedom)/launch/vero_map_test.launch"/>
+		<arg name="enableMapToOdom" value="false" />
+		<arg name="enableOdomToVehicle" value="true" />
+	<include file="$(find vero_pose_ekf)/launch/robot_pose_ekf.launch"/>
+	<include file="$(find joy2vero)/launch/joy2vero.launch"/>
+	
+</launch>

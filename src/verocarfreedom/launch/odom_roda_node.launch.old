@@ -1,0 +1,11 @@
+<!-- envia e recebe dados do barramento CAN -->
+
+<launch>
+
+	<group ns = "verocarfreedom" >
+		<node machine = "vero-OEM" pkg = "verocarfreedom" name = "odom_roda_node" type = "odom_roda_node" >
+			<rosparam file = "$(find verocarfreedom)/launch/odom_roda_node_params.yaml" />
+	 	</node>
+  	</group>
+
+</launch>

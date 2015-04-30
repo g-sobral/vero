@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+  <name>socketcan_lib</name>
+  <version>0.0.0</version>
+  <description>The socketcan_lib package</description>
+  <author>Adalberto Alencar Albuquerque</author>
+
+	<maintainer email="vero@todo.todo">vero</maintainer>
+
+  <license>BSD</license>
+  <url>http://ros.org/wiki/socketcan_lib</url>
+
+	<buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+
+</package>
+
+

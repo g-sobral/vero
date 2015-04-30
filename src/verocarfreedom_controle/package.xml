@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<package>
+  <name>verocarfreedom_controle</name>
+  <version>0.0.0</version>
+  <description>The verocarfreedom_controle package</description>
+
+  <author>Adalberto Alencar Albuquerque</author>
+  <license>BSD</license>
+
+  <url>http://ros.org/wiki/verocarfreedom_controle</url>
+
+	<maintainer email="vero@todo.todo">vero</maintainer>
+
+  <!-- <author email="jane.doe@example.com">Jane Doe</author> -->
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>teleop_source_keyboard</build_depend>
+  <build_depend>teleop_source_joystick</build_depend>
+  <build_depend>verocarfreedomdefs_msgs</build_depend>
+  <build_depend>verocarfreedomdefs</build_depend>
+  <build_depend>watchdog</build_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>teleop_source_keyboard</run_depend>
+  <run_depend>teleop_source_joystick</run_depend>
+  <run_depend>verocarfreedomdefs_msgs</run_depend>
+  <run_depend>verocarfreedomdefs</run_depend>
+  <run_depend>watchdog</run_depend>
+
+</package>
+

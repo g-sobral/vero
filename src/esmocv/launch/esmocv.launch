@@ -1,0 +1,63 @@
+<launch>
+  <node pkg="nodelet" type="nodeletesm" name="esmnodelet"
+    args="manager" output="screen" /> <!-- launch-prefix="gdb -ex run args" /-->
+  
+  
+  <!--param name="/image_topic_name" type="string" value="/image_raw" /-->  
+
+  
+  <node pkg="nodelet" type="nodeletesm" name="ptgrey_simple" args="load
+ptgrey_simple/ptgrey_simple esmnodelet" output="screen">
+  </node>
+  <param name="/image_topic_name" type="string" value="/ptgrey_simple/pgr_mono" />  
+  
+  
+  <node pkg="nodelet" type="nodeletesm" name="esmocv" args="load
+esmocv/esmocv esmnodelet" output="screen">
+    <param name="publish_slower_image" value="4" />
+    <param name="waitForRestartROI" value="0" />
+    <!--testado fast ddvs (120Hz): lambda=0.8 squareside=250 -->
+    <param name="track/maxIte" value="5" />
+    <param name="track/mprec" value="2" />
+    <!-- if max_RMS is zero, RMS error will not be calculated or checked (saves time) -->
+    <param name="track/max_RMS" value="0" />
+    <!-- if correlation_window is zero no correlation is used -->
+    <param name="track/correlation_window" value="0" />
+    <param name="roi/width" value="190" />
+    <param name="roi/height" value="190" />
+    <!-- if roi/x and roi/y are not set, the rectangle will be centered -->
+    <!--param name="roi/x" value="200" /-->
+    <!--param name="roi/y" value="200" /-->
+    <!-- step=0, no mask is set; step=1, mask is the whole image -->
+    <param name="stepmask/step" value="0" />
+    <param name="viewscale" value="0.5" />
+    <param name="ploteveryframe" value="10" />
+    <!-- f=1600pix good guesstimate for FLEA w/ 6mm lens -->
+    <param name="focal_length_pix" value="500" />
+  </node>
+
+  
+  <node pkg="nodelet" type="nodeletesm" name="dvsnodelet" args="load
+          dvs/ddvs esmnodelet" output="screen"   >
+
+    <param name="lambda" value="0.7" />
+    <param name="adapt_gain" value="1" />
+    <param name="ppv" value="1" />
+    <param name="stop_norm_error" value="0.0001" />
+    <param name="stop_is_definitive" value="true" />
+
+    <param name="robot" value="staubli" />
+    <param name="staubli/host" value="200.144.114.161" />
+    <param name="staubli/port" value="11111" />
+    <param name="staubli/theta_deg" value ="0.0" />
+  </node>  
+  
+  
+  <!--
+  <remap from = "image" to = "/ptgrey_simple/pgr_mono" />
+  <node pkg="nodelet" type="nodeletesm" name="imageview" args="load image_view/image esmnodelet"  output="screen">
+    <param name="autosize" value="false" />
+  </node>
+  -->
+  
+</launch>

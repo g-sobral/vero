@@ -1,0 +1,7 @@
+<launch>
+
+  <group ns="fusion2localise2d_node">
+    <node pkg="fusion2localise2d" name="fusion2localise_node" type="fusion2localise_node" args="-r /verocarfreedom/roda_odom -g /verocarfreedom/roda_odom"/>
+  </group>
+
+</launch>

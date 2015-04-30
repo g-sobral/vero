@@ -1,0 +1,27 @@
+<package>
+  <name>laser2odometry</name>
+  <description>
+
+     laser2odometry
+
+  </description>
+  <author>hazevedo</author>
+  <license>BSD</license>
+  <url>http://ros.org/wiki/laser2odometry</url>
+  <maintainer email="lukscasanova@gmail.com">Lucas Casanova Nogueira</maintainer>
+  <version>1.0.0</version>
+
+  <buildtool_depend>catkin</buildtool_depend>  
+  <build_depend>roscpp</build_depend>
+  <build_depend>tf</build_depend>
+
+  <run_depend>roscpp</run_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>nav_msgs</run_depend>
+  <run_depend>geometry_msgs</run_depend>
+  <run_depend>tf</run_depend>
+
+</package>
+
+

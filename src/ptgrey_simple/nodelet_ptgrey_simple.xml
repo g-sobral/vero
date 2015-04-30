@@ -1,0 +1,7 @@
+<library path="lib/libptgrey_simple">
+  <class name="ptgrey_simple/ptgrey_simple" type="ptgrey_simple::PgrSimpleNodelet" base_class_type="nodelet::Nodelet">
+    <description> 
+      A node to add a value and republish.
+    </description>
+  </class>
+</library>
